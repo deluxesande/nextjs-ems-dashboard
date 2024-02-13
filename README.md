@@ -20,7 +20,7 @@ Before you begin, ensure you have met the following requirements:
 To install the dashboard, follow these steps:
 
 ```bash
-git clone https://github.com/deluxesande/yourrepository.git
-cd yourrepository
+git clone https://github.com/deluxesande/nextjs-ems-dashboard.git
+cd nextjs-ems-dashboard
 npm install
 ```
