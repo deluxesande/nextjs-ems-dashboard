@@ -23,7 +23,7 @@ export default function LoginForm() {
     return (
         <Card className="mx-auto min-w-lg">
             <CardHeader className="space-y-1">
-                <CardTitle className="text-2xl font-bold">
+                <CardTitle className="text-2xl font-bold text-primary">
                     Branch Login
                 </CardTitle>
                 <CardDescription>
@@ -41,25 +41,25 @@ export default function LoginForm() {
                             <SelectContent>
                                 <SelectGroup>
                                     <SelectLabel>Branches</SelectLabel>
-                                    <SelectItem value="nakuru">Nakuru</SelectItem>
-                                    <SelectItem value="chuka">
-                                        Chuka
+                                    <SelectItem value="nakuru">
+                                        Nakuru
                                     </SelectItem>
+                                    <SelectItem value="chuka">Chuka</SelectItem>
                                     <SelectItem value="nairobi">
                                         Nairobi
                                     </SelectItem>
                                     <SelectItem value="mombasa">
                                         Mombasa
                                     </SelectItem>
-                                    <SelectItem value="meru">
-                                        Meru
-                                    </SelectItem>
+                                    <SelectItem value="meru">Meru</SelectItem>
                                 </SelectGroup>
                             </SelectContent>
                         </Select>
                     </div>
                     <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
+                        <Label htmlFor="email" className="text-primary">
+                            Email*
+                        </Label>
                         <Input
                             id="email"
                             placeholder="m@example.com"
@@ -68,7 +68,9 @@ export default function LoginForm() {
                         />
                     </div>
                     <div className="space-y-2">
-                        <Label htmlFor="password">Password</Label>
+                        <Label htmlFor="password" className="text-primary">
+                            Password*
+                        </Label>
                         <Input
                             id="password"
                             placeholder="Password"
@@ -88,7 +90,7 @@ export default function LoginForm() {
                         />
                         <p className="text-base">Keep me Logged in</p>
                     </div>
-                    <Button className="w-full" type="submit">
+                    <Button className="w-full space-y-4" type="submit">
                         Login
                     </Button>
                 </div>

@@ -4,9 +4,15 @@ export default function Home() {
     return (
         <main className="min-h-screen">
             <div className="flex flex-wrap">
-                <div className="flex-1 h-screen flex justify-center items-center">
+                <div className="flex-1 h-screen flex flex-col justify-center items-center">
                     {/* Form */}
                     <LoginForm />
+                    <div className="footer fixed bottom-5">
+                        <p className="text-xs">
+                            &copy; Deluxe Agency. All rights reserved. Made by
+                            Deluxe!
+                        </p>
+                    </div>
                 </div>
                 <div
                     className="bg-primary flex-1 h-screen flex justify-center items-center"
