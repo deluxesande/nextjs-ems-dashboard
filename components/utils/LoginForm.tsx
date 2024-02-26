@@ -21,7 +21,7 @@ import {
 
 export default function LoginForm() {
     return (
-        <Card className="mx-auto min-w-lg">
+        <Card className="mx-auto min-w-[400px]">
             <CardHeader className="space-y-1">
                 <CardTitle className="text-2xl font-bold text-primary">
                     Branch Login
@@ -73,7 +73,7 @@ export default function LoginForm() {
                         </Label>
                         <Input
                             id="password"
-                            placeholder="Password"
+                            placeholder="Min 8 characters"
                             required
                             type="password"
                         />
