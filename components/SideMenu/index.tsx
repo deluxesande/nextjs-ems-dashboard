@@ -9,7 +9,7 @@ const SideMenu = ({ children }: any) => {
     const [expanded, setExpanded] = useState<boolean>(true);
 
     return (
-        <aside className="h-screen py-4 w-[350px]">
+        <aside className="h-screen py-4 w-96">
             <nav className="h-full flex flex-col bg-white shadow-sm">
                 <div className="p-4 pb-2 flex justify-between items-center">
                     <h1
