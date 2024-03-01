@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Home() {
     return (
-        <SideMenuLayout>
+        <SideMenuLayout page="Dashboard" branch="Chuka">
             <main className="min-h-screen">
                 <Head>
                     <title>EBS | Dashboard</title>

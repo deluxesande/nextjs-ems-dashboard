@@ -4,7 +4,7 @@ import Head from "next/head";
 
 const GenerateBill = () => {
     return (
-        <SideMenuLayout>
+        <SideMenuLayout page="Generate Bill" branch="Chuka">
             <Head>
                 <title>EBS | Generate Bill</title>
             </Head>

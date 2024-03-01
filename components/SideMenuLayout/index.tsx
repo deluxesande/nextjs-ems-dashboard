@@ -14,9 +14,11 @@ import { useRouter } from "next/router";
 import { Input } from "../ui/input";
 import Image from "next/image";
 
-const SideMenuLayout: React.FC<{ children: React.ReactNode }> = ({
-    children,
-}) => {
+const SideMenuLayout: React.FC<{
+    children: React.ReactNode;
+    page: string;
+    branch: string;
+}> = ({ children, page, branch }) => {
     const router = useRouter();
 
     return (
@@ -47,9 +49,9 @@ const SideMenuLayout: React.FC<{ children: React.ReactNode }> = ({
             <div className="flex-grow p-6 bg-slate-200">
                 <div className="flex justify-between">
                     <div>
-                        <p className="text-sm font-light">Pages / Dashboard</p>
+                        <p className="text-sm font-light">Pages / {page}</p>
                         <h1 className="text-primary font-semibold text-3xl my-1">
-                            Main Dashboard
+                            {page}
                         </h1>
                     </div>
                     <div className="flex items-center gap-3 bg-slate-100 py-[1px] px-4 rounded-full">
@@ -81,7 +83,7 @@ const SideMenuLayout: React.FC<{ children: React.ReactNode }> = ({
                     </div>
                 </div>
                 <p className="text-md font-medium text-green-500 mt-3 mb-4">
-                    Chuka Branch
+                    {branch} Branch
                 </p>
                 {children}
             </div>

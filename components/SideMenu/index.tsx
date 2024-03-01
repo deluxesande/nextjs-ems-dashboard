@@ -1,6 +1,4 @@
 "use-client";
-import Image from "next/image";
-import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react";
 import { createContext, useState } from "react";
 
 export const SideMenuContext = createContext<any>(null);
