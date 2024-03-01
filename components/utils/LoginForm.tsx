@@ -18,8 +18,11 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
+import { useRouter } from "next/router";
 
 export default function LoginForm() {
+    const router = useRouter();
+
     return (
         <Card className="mx-auto min-w-[400px]">
             <CardHeader className="space-y-1">
@@ -90,7 +93,11 @@ export default function LoginForm() {
                         />
                         <p className="text-base">Keep me Logged in</p>
                     </div>
-                    <Button className="w-full space-y-4" type="submit">
+                    <Button
+                        className="w-full space-y-4"
+                        type="submit"
+                        onClick={() => router.push("/")}
+                    >
                         Login
                     </Button>
                 </div>
