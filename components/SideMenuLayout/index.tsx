@@ -35,6 +35,7 @@ const SideMenuLayout: React.FC<{ children: React.ReactNode }> = ({
                 <SideMenuItem
                     icon={<Receipt size={20} />}
                     text="Generate Bill"
+                    onClick={() => router.push("/generate-bill")}
                 />
                 <SideMenuItem icon={<User size={20} />} text="Profile" />
             </SideMenu>

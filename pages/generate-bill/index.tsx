@@ -6,7 +6,7 @@ const GenerateBill = () => {
     return (
         <SideMenuLayout>
             <Head>
-                <title>EBS | Generate Bill Page</title>
+                <title>EBS | Generate Bill</title>
             </Head>
             <div className="bg-red-500 h-[200px] w-[300px]"></div>
         </SideMenuLayout>
