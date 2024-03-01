@@ -41,7 +41,7 @@ const SideMenuItem: React.FC<{
                 ></div>
             )}
 
-            {expanded && (
+            {/* {expanded && (
                 <div
                     className={`absolute left-full rounded-md px-2 py-1 ml-6
                 bg-indigo-100 text-indigo-800 text-sm
@@ -50,7 +50,7 @@ const SideMenuItem: React.FC<{
                 >
                     {text}
                 </div>
-            )}
+            )} */}
         </li>
     );
 };
