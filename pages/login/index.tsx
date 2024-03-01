@@ -1,8 +1,12 @@
 import LoginForm from "@/components/utils/LoginForm";
+import Head from "next/head";
 
 export default function LoginPage() {
     return (
         <main className="min-h-screen">
+            <Head>
+                <title>EBS | Login Page</title>
+            </Head>
             <div className="flex flex-wrap">
                 <div className="flex-1 h-screen flex flex-col justify-center items-center">
                     {/* Form */}

@@ -8,10 +8,14 @@ import {
     User,
     UserCircle,
 } from "lucide-react";
+import Head from "next/head";
 
 const GenerateBill = () => {
     return (
         <>
+            <Head>
+                <title>EBS | Generate Bill Page</title>
+            </Head>
             <SideMenu>
                 <SideMenuItem
                     icon={<LayoutDashboard size={20} />}
