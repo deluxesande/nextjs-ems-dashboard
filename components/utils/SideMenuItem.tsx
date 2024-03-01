@@ -2,20 +2,27 @@
 import { useContext } from "react";
 import { SideMenuContext } from "@/components/SideMenu";
 
-const SideMenuItem = ({ icon, text, active, alert }: any) => {
+const SideMenuItem: React.FC<{
+    icon: React.ReactNode;
+    text: string;
+    alert?: boolean;
+    active?: boolean;
+    onClick?: () => void;
+}> = ({ icon, text, alert, active, onClick }) => {
     const { expanded } = useContext(SideMenuContext);
     return (
         <li
             className={`
-        relative flex items-center py-2 px-3 my-2
-        font-medium rounded-md cursor-pointer
-        transition-colors group 
-        ${
-            active
-                ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800 "
-                : "hover:bg-indigo-50 text-gray-600"
-        }
-        `}
+                relative flex items-center py-2 px-3 my-2
+                font-medium rounded-md cursor-pointer
+                transition-colors group 
+                ${
+                    active
+                        ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800 "
+                        : "hover:bg-indigo-50 text-gray-600"
+                }
+            `}
+            onClick={onClick}
         >
             {icon}
             <span

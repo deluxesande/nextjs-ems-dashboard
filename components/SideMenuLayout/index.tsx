@@ -8,16 +8,19 @@ import {
     Receipt,
     User,
 } from "lucide-react";
+import { useRouter } from "next/router";
 
 const SideMenuLayout: React.FC<{ children: React.ReactNode }> = ({
     children,
 }) => {
+    const router = useRouter();
     return (
         <div className="flex">
             <SideMenu>
                 <SideMenuItem
                     icon={<LayoutDashboard size={20} />}
                     text="Dashboard"
+                    onClick={() => router.push("/")}
                 />
                 <SideMenuItem
                     icon={<BarChart3 size={20} />}
