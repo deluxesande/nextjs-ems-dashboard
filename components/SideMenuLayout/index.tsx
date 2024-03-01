@@ -3,10 +3,10 @@ import SideMenu from "@/components/SideMenu";
 import SideMenuItem from "@/components/utils/SideMenuItem";
 import {
     LayoutDashboard,
-    BarChart3,
-    UserCircle,
-    Receipt,
+    BarChart2,
     User,
+    ReceiptText,
+    Contact2,
     Search,
     Moon,
 } from "lucide-react";
@@ -30,21 +30,18 @@ const SideMenuLayout: React.FC<{
                     onClick={() => router.push("/")}
                 />
                 <SideMenuItem
-                    icon={<BarChart3 size={20} />}
+                    icon={<BarChart2 size={20} />}
                     text="Reports"
                     active
                     alert
                 />
+                <SideMenuItem icon={<User size={20} />} text="Manage Users" />
                 <SideMenuItem
-                    icon={<UserCircle size={20} />}
-                    text="Manage Users"
-                />
-                <SideMenuItem
-                    icon={<Receipt size={20} />}
+                    icon={<ReceiptText size={20} />}
                     text="Generate Bill"
                     onClick={() => router.push("/generate-bill")}
                 />
-                <SideMenuItem icon={<User size={20} />} text="Profile" />
+                <SideMenuItem icon={<Contact2 size={20} />} text="Profile" />
             </SideMenu>
             <div className="flex-grow p-6 bg-slate-200">
                 <div className="flex justify-between">

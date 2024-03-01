@@ -2,7 +2,6 @@ import SideMenuLayout from "@/components/SideMenuLayout";
 import { UsersRound, DollarSign, UserRoundCheck } from "lucide-react";
 import Head from "next/head";
 import React from "react";
-import { number } from "zod";
 
 export default function Home() {
     const stats = [
