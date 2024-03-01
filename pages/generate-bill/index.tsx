@@ -1,4 +1,3 @@
-"use client";
 import SideMenuLayout from "@/components/SideMenuLayout";
 import { Input } from "@/components/ui/input";
 import Head from "next/head";

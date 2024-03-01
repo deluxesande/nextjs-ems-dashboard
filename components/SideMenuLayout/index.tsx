@@ -35,7 +35,11 @@ const SideMenuLayout: React.FC<{
                     active
                     alert
                 />
-                <SideMenuItem icon={<User size={20} />} text="Manage Users" />
+                <SideMenuItem
+                    icon={<User size={20} />}
+                    text="Manage Users"
+                    onClick={() => router.push("/users")}
+                />
                 <SideMenuItem
                     icon={<ReceiptText size={20} />}
                     text="Generate Bill"
