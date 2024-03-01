@@ -10,7 +10,7 @@ const GenerateBill = () => {
             </Head>
             <div
                 className="bg-slate-50 p-5 mt-14 rounded-xl"
-                style={{ width: "calc(100vw - 384px)" }}
+                style={{ width: "calc(100vw - 440px)" }}
             >
                 <h1 className="text-primary font-semibold text-md my-1">
                     Calculate Bill
