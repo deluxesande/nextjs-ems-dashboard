@@ -14,6 +14,7 @@ const SideMenuLayout: React.FC<{ children: React.ReactNode }> = ({
     children,
 }) => {
     const router = useRouter();
+
     return (
         <div className="flex">
             <SideMenu>
@@ -39,7 +40,18 @@ const SideMenuLayout: React.FC<{ children: React.ReactNode }> = ({
                 />
                 <SideMenuItem icon={<User size={20} />} text="Profile" />
             </SideMenu>
-            <div className="flex-grow">{children}</div>
+            <div className="flex-grow p-6 bg-slate-200">
+                <div className="mb-4">
+                    <p className="text-sm font-light">Pages / Dashboard</p>
+                    <h1 className="text-primary font-semibold text-3xl my-1">
+                        Main Dashboard
+                    </h1>
+                    <p className="text-md font-medium text-green-500 mt-3">
+                        Chuka Branch
+                    </p>
+                </div>
+                {children}
+            </div>
         </div>
     );
 };

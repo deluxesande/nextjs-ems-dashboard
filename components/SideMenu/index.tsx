@@ -14,7 +14,7 @@ const SideMenu = ({ children }: any) => {
                 <div className="p-4 pb-2 flex justify-between items-center">
                     <h1
                         // Change mb-4 to match the bread crumbs
-                        className="text-2xl font-bold text-secondary-500 mb-4"
+                        className="text-2xl font-bold text-secondary-500 mb-14"
                         style={{
                             textTransform: "uppercase",
                         }}
