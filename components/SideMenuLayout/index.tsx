@@ -27,25 +27,36 @@ const SideMenuLayout: React.FC<{
                 <SideMenuItem
                     icon={<LayoutDashboard size={20} />}
                     text="Dashboard"
+                    active={page === "Dashboard"}
+                    alert={page === "Dashboard"}
                     onClick={() => router.push("/")}
                 />
                 <SideMenuItem
                     icon={<BarChart2 size={20} />}
                     text="Reports"
-                    active
-                    alert
+                    active={page === "Reports"}
+                    alert={page === "Reports"}
                 />
                 <SideMenuItem
                     icon={<User size={20} />}
                     text="Manage Users"
+                    active={page === "Manage Users"}
+                    alert={page === "Manage Users"}
                     onClick={() => router.push("/users")}
                 />
                 <SideMenuItem
                     icon={<ReceiptText size={20} />}
                     text="Generate Bill"
+                    active={page === "Generate Bill"}
+                    alert={page === "Generate Bill"}
                     onClick={() => router.push("/generate-bill")}
                 />
-                <SideMenuItem icon={<Contact2 size={20} />} text="Profile" />
+                <SideMenuItem
+                    icon={<Contact2 size={20} />}
+                    text="Profile"
+                    active={page === "Profile"}
+                    alert={page === "Profile"}
+                />
             </SideMenu>
             <div className="flex-grow p-6 bg-slate-200">
                 <div className="flex justify-between">
