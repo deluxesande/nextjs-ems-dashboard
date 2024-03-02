@@ -74,7 +74,7 @@ const GenerateBillForm: React.FC<{
                 className="bg-primary text-slate-200 px-14 py-2 w-full rounded-md mt-8"
                 onClick={handleSubmit}
             >
-                Calculate
+                Add
             </button>
         </div>
     );

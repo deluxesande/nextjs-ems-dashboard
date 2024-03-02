@@ -1,3 +1,4 @@
+import { BillTable } from "@/components/BillTable";
 import GenerateBillForm from "@/components/GenerateBillForm";
 import SideMenuLayout from "@/components/SideMenuLayout";
 import Head from "next/head";
@@ -12,17 +13,20 @@ const GenerateBill = () => {
                 <title>EBS | Generate Bill</title>
             </Head>
             {!addBill && (
-                <div className="flex justify-between mt-14">
-                    <h1 className="text-primary font-semibold text-xl my-1">
-                        Bill
-                    </h1>
-                    <button
-                        className="bg-primary text-slate-200 px-14 py-2 rounded-md mt-8"
-                        onClick={() => setAddBill(true)}
-                    >
-                        Add
-                    </button>
-                </div>
+                <>
+                    <div className="flex justify-between items-center mt-14">
+                        <h1 className="text-primary font-semibold text-xl my-1">
+                            Bill
+                        </h1>
+                        <button
+                            className="bg-primary text-slate-200 px-14 py-2 rounded-md"
+                            onClick={() => setAddBill(true)}
+                        >
+                            Add
+                        </button>
+                    </div>
+                    <BillTable />
+                </>
             )}
             {addBill && <GenerateBillForm setAddBill={setAddBill} />}
         </SideMenuLayout>
