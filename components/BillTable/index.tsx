@@ -59,7 +59,7 @@ const bills = [
 export function BillTable() {
     return (
         <Table className="bg-slate-50 shadow rounded-md mt-5">
-            <TableHeader>
+            <TableHeader className="pr-6">
                 <TableRow>
                     <TableHead className="w-[100px]">UID</TableHead>
                     <TableHead>Name</TableHead>
@@ -74,7 +74,7 @@ export function BillTable() {
             </TableHeader>
             <TableBody>
                 {bills.map((bill, index) => (
-                    <TableRow key={index}>
+                    <TableRow key={index} className="border-none">
                         <TableCell className="font-bold py-6">
                             {bill.UID}
                         </TableCell>
