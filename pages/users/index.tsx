@@ -57,7 +57,7 @@ const GenerateBill = () => {
                     </div>
                     <div className="mt-4 flex-1">
                         <label htmlFor="phone" className="text-md">
-                            phone No.
+                            Phone No.
                         </label>
                         <div className="relative">
                             <Input
