@@ -1,9 +1,7 @@
 import {
     Table,
     TableBody,
-    TableCaption,
     TableCell,
-    TableFooter,
     TableHead,
     TableHeader,
     TableRow,
@@ -61,45 +59,45 @@ export function BillTable() {
         <Table className="bg-slate-50 shadow rounded-md mt-5">
             <TableHeader className="pr-6">
                 <TableRow>
-                    <TableHead className="w-[100px]">UID</TableHead>
-                    <TableHead>Name</TableHead>
-                    <TableHead>Address</TableHead>
-                    <TableHead>SCNO</TableHead>
-                    <TableHead>Units</TableHead>
-                    <TableHead>Date</TableHead>
-                    <TableHead>Due Date</TableHead>
-                    <TableHead>Due Amount</TableHead>
-                    <TableHead>Total Amount</TableHead>
+                    <TableHead className="w-[100px] pl-6">UID</TableHead>
+                    <TableHead className="pl-6">Name</TableHead>
+                    <TableHead className="pl-6">Address</TableHead>
+                    <TableHead className="pl-6">SCNO</TableHead>
+                    <TableHead className="pl-6">Units</TableHead>
+                    <TableHead className="pl-6">Date</TableHead>
+                    <TableHead className="pl-6">Due Date</TableHead>
+                    <TableHead className="pl-6">Due Amount</TableHead>
+                    <TableHead className="pl-6">Total Amount</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
                 {bills.map((bill, index) => (
                     <TableRow key={index} className="border-none">
-                        <TableCell className="font-bold py-6">
+                        <TableCell className="font-bold py-6 pl-6">
                             {bill.UID}
                         </TableCell>
-                        <TableCell className="font-bold py-6">
+                        <TableCell className="font-bold py-6 pl-6 w-96">
                             {bill.Name}
                         </TableCell>
-                        <TableCell className="font-bold py-6">
+                        <TableCell className="font-bold py-6 pl-6">
                             {bill.Address}
                         </TableCell>
-                        <TableCell className="font-bold py-6">
+                        <TableCell className="font-bold py-6 pl-6">
                             {bill.SCNO}
                         </TableCell>
-                        <TableCell className="font-bold py-6">
+                        <TableCell className="font-bold py-6 pl-6">
                             {bill.Units}
                         </TableCell>
-                        <TableCell className="font-bold py-6">
+                        <TableCell className="font-bold py-6 pl-6">
                             {bill.Date}
                         </TableCell>
-                        <TableCell className="font-bold py-6">
+                        <TableCell className="font-bold py-6 pl-6">
                             {bill.DueDate}
                         </TableCell>
-                        <TableCell className="font-bold py-6">
+                        <TableCell className="font-bold py-6 pl-6">
                             {bill.DueAmount}
                         </TableCell>
-                        <TableCell className="font-bold py-6">
+                        <TableCell className="font-bold py-6 pl-6">
                             {bill.TotalAmount}
                         </TableCell>
                     </TableRow>
