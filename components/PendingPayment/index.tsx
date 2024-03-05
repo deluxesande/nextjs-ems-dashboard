@@ -12,26 +12,22 @@ import { ChevronsUpDown } from "lucide-react";
 const users = [
     {
         Name: "John Doe",
-        Address: "123 Main St",
-        Date: "12/12/2021",
+        SCNO: "SCNO001",
         Amount: "200.00",
     },
     {
         Name: "Jane Smith",
-        Address: "456 Elm St",
-        Date: "12/12/2021",
+        SCNO: "SCNO002",
         Amount: "300.00",
     },
     {
         Name: "Bob Johnson",
-        Address: "789 Pine St",
-        Date: "12/12/2021",
+        SCNO: "SCNO003",
         Amount: "400.00",
     },
     {
         Name: "Alice Williams",
-        Address: "321 Oak St",
-        Date: "12/12/2021",
+        SCNO: "SCNO004",
         Amount: "500.00",
     },
 ];
@@ -52,23 +48,19 @@ export function PendingPayment() {
                 <Table className="bg-slate-50 shadow rounded-md mt-5 p-6">
                     <TableHeader className="pr-6">
                         <TableRow>
-                            <TableHead className="pl-6">Users</TableHead>
-                            <TableHead className="pl-6">Address</TableHead>
-                            <TableHead className="pl-6">Date</TableHead>
+                            <TableHead className="pl-6">Name</TableHead>
+                            <TableHead className="pl-6">SCNO</TableHead>
                             <TableHead className="pl-6">Amount</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {users.map((user, index) => (
                             <TableRow key={index} className="border-none">
-                                <TableCell className="font-bold py-6 w-1/6">
+                                <TableCell className="font-bold py-6 w-2/6">
                                     {user.Name}
                                 </TableCell>
                                 <TableCell className="font-bold py-6 w-1/6">
-                                    {user.Address}
-                                </TableCell>
-                                <TableCell className="font-bold py-6 w-1/6">
-                                    {user.Date}
+                                    {user.SCNO}
                                 </TableCell>
                                 <TableCell className="font-bold py-6 w-1/6">
                                     Ksh. {user.Amount}
