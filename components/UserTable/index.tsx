@@ -15,28 +15,28 @@ const users = [
         Name: "John Doe",
         Address: "123 Main St",
         SCNO: "SCNO001",
-        Amount: "$200.00",
+        Amount: "200.00",
     },
     {
         UID: "UID002",
         Name: "Jane Smith",
         Address: "456 Elm St",
         SCNO: "SCNO002",
-        Amount: "$300.00",
+        Amount: "300.00",
     },
     {
         UID: "UID003",
         Name: "Bob Johnson",
         Address: "789 Pine St",
         SCNO: "SCNO003",
-        Amount: "$400.00",
+        Amount: "400.00",
     },
     {
         UID: "UID004",
         Name: "Alice Williams",
         Address: "321 Oak St",
         SCNO: "SCNO004",
-        Amount: "$500.00",
+        Amount: "500.00",
     },
 ];
 
@@ -69,7 +69,7 @@ export function UserTable() {
                             {user.SCNO}
                         </TableCell>
                         <TableCell className="font-bold py-6 pl-6">
-                            {user.Amount}
+                            Ksh. {user.Amount}
                         </TableCell>
                         <TableCell className="font-bold py-6 pl-6 flex gap-2">
                             <FilePenLine

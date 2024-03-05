@@ -16,8 +16,8 @@ const bills = [
         Units: 10,
         Date: "2022-01-01",
         DueDate: "2022-02-01",
-        DueAmount: "$200.00",
-        TotalAmount: "$250.00",
+        DueAmount: "200.00",
+        TotalAmount: "250.00",
     },
     {
         UID: "UID002",
@@ -27,8 +27,8 @@ const bills = [
         Units: 15,
         Date: "2022-01-15",
         DueDate: "2022-02-15",
-        DueAmount: "$300.00",
-        TotalAmount: "$350.00",
+        DueAmount: "300.00",
+        TotalAmount: "350.00",
     },
     {
         UID: "UID003",
@@ -38,8 +38,8 @@ const bills = [
         Units: 20,
         Date: "2022-01-20",
         DueDate: "2022-02-20",
-        DueAmount: "$400.00",
-        TotalAmount: "$450.00",
+        DueAmount: "400.00",
+        TotalAmount: "450.00",
     },
     {
         UID: "UID004",
@@ -49,8 +49,8 @@ const bills = [
         Units: 25,
         Date: "2022-01-25",
         DueDate: "2022-02-25",
-        DueAmount: "$500.00",
-        TotalAmount: "$550.00",
+        DueAmount: "500.00",
+        TotalAmount: "550.00",
     },
 ];
 
@@ -95,10 +95,10 @@ export function BillTable() {
                             {bill.DueDate}
                         </TableCell>
                         <TableCell className="font-bold py-6 pl-6">
-                            {bill.DueAmount}
+                            Ksh. {bill.DueAmount}
                         </TableCell>
                         <TableCell className="font-bold py-6 pl-6">
-                            {bill.TotalAmount}
+                            Ksh. {bill.TotalAmount}
                         </TableCell>
                     </TableRow>
                 ))}

@@ -36,6 +36,7 @@ const SideMenuLayout: React.FC<{
                     text="Reports"
                     active={page === "Reports"}
                     alert={page === "Reports"}
+                    onClick={() => router.push("/reports")}
                 />
                 <SideMenuItem
                     icon={<User size={20} />}

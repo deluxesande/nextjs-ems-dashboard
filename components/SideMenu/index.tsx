@@ -9,7 +9,7 @@ const SideMenu = ({ children }: any) => {
     const router = useRouter();
 
     return (
-        <aside className="h-screen py-4 w-96">
+        <aside className="h-screen py-4 w-96 sticky top-0">
             <nav className="h-full flex flex-col bg-white shadow-sm">
                 <div className="p-4 pb-2 flex justify-between items-center">
                     <h1
