@@ -7,46 +7,59 @@ export default function WeekPaymentChart() {
     const chartRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
-        const myChartRef = chartRef.current?.getContext("2d"); // Add optional chaining operator
+        const myChartRef = chartRef.current?.getContext("2d");
 
         if (myChartRef) {
-            // Add null check
             new Chart(myChartRef, {
                 type: "bar",
                 data: {
-                    labels: [
-                        "Monday",
-                        "Tuesday",
-                        "Wednesday",
-                        "Thursday",
-                        "Friday",
-                        "Saturday",
-                        "Sunday",
-                    ],
+                    labels: ["17", "18", "19", "20", "21", "22", "23"],
                     datasets: [
                         {
-                            label: undefined,
+                            label: "Payments",
                             data: [12, 19, 3, 5, 2, 3, 7], // replace this with your data
                             backgroundColor: colors.primary,
-                            borderColor: colors.primary,
-                            borderWidth: 1,
+                            barThickness: 16,
+                            borderRadius: 30,
+                        },
+                        {
+                            label: "Payments",
+                            data: [12, 19, 3, 5, 2, 3, 7], // replace this with your data
+                            backgroundColor: colors.tertiary,
+                            barThickness: 16,
+                            borderRadius: 30,
+                        },
+                        {
+                            label: "More Payments",
+                            data: [5, 10, 4, 8, 3, 6, 9], // replace this with your data
+                            backgroundColor: colors.secondary,
+                            barThickness: 16,
+                            borderRadius: 30,
                         },
                     ],
                 },
                 options: {
                     scales: {
                         x: {
-                            display: true, // show x-axis labels
+                            display: true,
                             grid: {
-                                display: false, // hide grid lines on x-axis
+                                display: false,
                             },
+                            border: {
+                                display: false,
+                            },
+                            stacked: true,
                         },
                         y: {
-                            display: false, // hide y-axis labels
+                            display: false,
                             beginAtZero: true,
                             grid: {
-                                display: false, // hide grid lines on y-axis
+                                display: false,
                             },
+                            border: {
+                                display: false,
+                            },
+                            stacked: true, // stack the bars
                         },
                     },
                     plugins: {
