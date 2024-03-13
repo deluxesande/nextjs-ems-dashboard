@@ -1,5 +1,6 @@
 import MonthlyPayment from "@/components/MonthlyPayment";
 import PaymentAnalysis from "@/components/PaymentAnalysis";
+import { RecentPaymentTable } from "@/components/RecentPaymentTable";
 import SideMenuLayout from "@/components/SideMenuLayout";
 import { DollarSign, UserRoundCheck, UsersRound } from "lucide-react";
 import Head from "next/head";
@@ -57,6 +58,7 @@ export default function Home() {
                     <MonthlyPayment />
                     <PaymentAnalysis />
                 </div>
+                <RecentPaymentTable />
             </main>
         </SideMenuLayout>
     );
