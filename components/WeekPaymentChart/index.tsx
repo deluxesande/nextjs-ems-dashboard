@@ -83,7 +83,7 @@ export default function WeekPaymentChart() {
                     size={20}
                 />
             </div>
-            <canvas id="myChart" ref={chartRef} />
+            <canvas className="mt-6" id="myChart" ref={chartRef} />
         </div>
     );
 }

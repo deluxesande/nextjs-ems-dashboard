@@ -14,7 +14,7 @@ export default function PaymentAnalysis() {
                     size={20}
                 />
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center mt-6">
                 <PaymentAnalysisPieChart />
             </div>
         </div>

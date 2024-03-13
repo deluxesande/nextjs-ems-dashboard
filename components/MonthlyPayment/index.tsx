@@ -15,8 +15,8 @@ export default function MonthlyPayment() {
                     size={20}
                 />
             </div>
-            <div className="flex justify-between items-center gap-4">
-                <div className="w-1/4 flex flex-col justify-center items-center">
+            <div className="flex xl:flex-row sm:flex-col md:flex-col lg:flex-col justify-between items-center gap-4 mt-6">
+                <div className="xl:w-1/4 sm:w-full md:w-full lg:w-full flex flex-col justify-center items-center">
                     <div>
                         <h1 className="text-black font-semibold text-2xl my-1">
                             Ksh 200, 000

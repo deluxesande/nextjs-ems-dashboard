@@ -1,18 +1,18 @@
-import React from "react";
 import SideMenu from "@/components/SideMenu";
 import SideMenuItem from "@/components/utils/SideMenuItem";
 import {
-    LayoutDashboard,
     BarChart2,
-    User,
-    ReceiptText,
     Contact2,
-    Search,
+    LayoutDashboard,
     Moon,
+    ReceiptText,
+    Search,
+    User,
 } from "lucide-react";
-import { useRouter } from "next/router";
-import { Input } from "../ui/input";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import React from "react";
+import { Input } from "../ui/input";
 
 const SideMenuLayout: React.FC<{
     children: React.ReactNode;

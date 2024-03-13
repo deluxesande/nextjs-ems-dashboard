@@ -81,7 +81,10 @@ export default function PaymentAnalysisPieChart() {
     }, []);
 
     return (
-        <div style={{ width: "300px", height: "300px" }}>
+        <div
+            className="flex flex-1 justify-center items-center"
+            style={{ width: "300px", height: "300px" }}
+        >
             <canvas ref={chartRef} />
         </div>
     );
