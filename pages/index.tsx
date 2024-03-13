@@ -1,4 +1,5 @@
 import MonthlyPayment from "@/components/MonthlyPayment";
+import PaymentAnalysis from "@/components/PaymentAnalysis";
 import SideMenuLayout from "@/components/SideMenuLayout";
 import { DollarSign, UserRoundCheck, UsersRound } from "lucide-react";
 import Head from "next/head";
@@ -24,7 +25,7 @@ export default function Home() {
 
     return (
         <SideMenuLayout page="Dashboard" branch="Chuka">
-            <main className="flex flex-col gap-10">
+            <main className="w-full flex flex-col gap-10">
                 <Head>
                     <title>EBS | Dashboard</title>
                 </Head>
@@ -52,7 +53,10 @@ export default function Home() {
                         );
                     })}
                 </div>
-                <MonthlyPayment />
+                <div className="flex gap-6">
+                    <MonthlyPayment />
+                    <PaymentAnalysis />
+                </div>
             </main>
         </SideMenuLayout>
     );

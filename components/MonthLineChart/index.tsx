@@ -69,6 +69,16 @@ export default function LineChartComponent() {
                             legend: {
                                 display: false,
                             },
+                            tooltip: {
+                                callbacks: {
+                                    label: function (context) {
+                                        const label =
+                                            context.dataset.label || "";
+                                        const value = context.parsed.y;
+                                        return `${label}: ${value}`;
+                                    },
+                                },
+                            },
                         },
                     },
                 });
