@@ -35,7 +35,7 @@ const users = [
 export function PendingPayment() {
     return (
         <>
-            <div className="p-6 bg-slate-50 shadow rounded-md mt-14">
+            <div className="p-6 bg-slate-50 shadow rounded-md">
                 <div className="flex justify-between items-center">
                     <h1 className="text-primary font-semibold text-xl my-1">
                         Pending Payments
