@@ -1,7 +1,7 @@
+import MonthlyPayment from "@/components/MonthlyPayment";
 import SideMenuLayout from "@/components/SideMenuLayout";
-import { UsersRound, DollarSign, UserRoundCheck } from "lucide-react";
+import { DollarSign, UserRoundCheck, UsersRound } from "lucide-react";
 import Head from "next/head";
-import React from "react";
 
 export default function Home() {
     const stats = [
@@ -21,9 +21,10 @@ export default function Home() {
             number: 22,
         },
     ];
+
     return (
         <SideMenuLayout page="Dashboard" branch="Chuka">
-            <main className="min-h-screen">
+            <main className="flex flex-col gap-10">
                 <Head>
                     <title>EBS | Dashboard</title>
                 </Head>
@@ -51,6 +52,7 @@ export default function Home() {
                         );
                     })}
                 </div>
+                <MonthlyPayment />
             </main>
         </SideMenuLayout>
     );
