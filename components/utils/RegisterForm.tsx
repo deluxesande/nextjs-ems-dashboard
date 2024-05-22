@@ -23,41 +23,55 @@ import { useRouter } from "next/router";
 import supabase from "@/utils/supabase/server";
 import Link from "next/link";
 
-export default function LoginForm() {
+export default function RegisterForm() {
     const router = useRouter();
 
-    const signIn = async (event: React.FormEvent<HTMLFormElement>) => {
+    const signUp = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         const formData = new FormData(event.currentTarget);
         const email = formData.get("email");
         const password = formData.get("password");
+        const phone = formData.get("phone");
 
-        const { error } = await supabase.auth.signInWithPassword({
+        const { data: user, error } = await supabase.auth.signUp({
             email: email as string,
             password: password as string,
         });
 
         if (error) {
-            return router.push("/login");
+            return router.push("/register");
         }
 
-        return router.push("/");
+        if (user) {
+            const { data, error } = await supabase
+                .from("user_profiles")
+                .insert([
+                    // @ts-ignore
+                    { user_id: user.id, phone: phone as string },
+                ]);
+
+            if (error) {
+                return router.push("/register");
+            }
+
+            return router.push("/login");
+        }
     };
 
     return (
         <Card className="mx-auto min-w-[400px]">
             <CardHeader className="space-y-1">
                 <CardTitle className="text-2xl font-bold text-primary">
-                    Branch Login
+                    Branch Sign Up
                 </CardTitle>
                 <CardDescription>
-                    Enter your email and password to login
+                    Enter your details to create an account
                 </CardDescription>
                 <hr></hr>
             </CardHeader>
             <CardContent>
-                <form className="space-y-4" onSubmit={signIn}>
+                <form className="space-y-4" onSubmit={signUp}>
                     <div className="space-y-4">
                         <Select>
                             <SelectTrigger className="w-full">
@@ -94,6 +108,18 @@ export default function LoginForm() {
                         />
                     </div>
                     <div className="space-y-2">
+                        <Label htmlFor="email" className="text-primary">
+                            Phone*
+                        </Label>
+                        <Input
+                            id="phone"
+                            name="phone"
+                            placeholder="0712345678"
+                            required
+                            type="number"
+                        />
+                    </div>
+                    <div className="space-y-2">
                         <Label htmlFor="password" className="text-primary">
                             Password*
                         </Label>
@@ -105,36 +131,29 @@ export default function LoginForm() {
                             type="password"
                         />
                     </div>
-                    <div className="flex justify-end">
-                        <a href="#" className="text-blue-500 text-sm">
-                            Forgot Password?
-                        </a>
-                    </div>
-                    <div className="flex justify-start gap-2">
-                        <input
-                            type="checkbox"
-                            style={{ transform: "scale(1.2)" }}
+                    <div className="space-y-2">
+                        <Label
+                            htmlFor="confirmPassword"
+                            className="text-primary"
+                        >
+                            Confirm Password*
+                        </Label>
+                        <Input
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Min 8 characters"
+                            required
+                            type="password"
                         />
-                        <p className="text-base">Keep me Logged in</p>
                     </div>
-                    {/* <Button
-                        className="w-full space-y-4"
-                        type="submit"
-                        onClick={() => router.push("/")}
-                    >
-                        Login
-                    </Button> */}
                     <Button className="w-full space-y-4" type="submit">
-                        Login
+                        Sign Up
                     </Button>
                     <div className="flex justify-start">
                         <p>
                             Already have an account?
-                            <Link
-                                href="/register"
-                                className="text-blue-500 ml-2"
-                            >
-                                Sign up
+                            <Link href="/login" className="text-blue-500 ml-2">
+                                Log in
                             </Link>
                         </p>
                     </div>
