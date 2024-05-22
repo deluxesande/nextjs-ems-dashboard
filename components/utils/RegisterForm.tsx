@@ -32,9 +32,8 @@ export default function RegisterForm() {
         const formData = new FormData(event.currentTarget);
         const email = formData.get("email");
         const password = formData.get("password");
-        const phone = formData.get("phone");
 
-        const { data: user, error } = await supabase.auth.signUp({
+        const { error } = await supabase.auth.signUp({
             email: email as string,
             password: password as string,
         });
@@ -42,21 +41,7 @@ export default function RegisterForm() {
         if (error) {
             return router.push("/register");
         }
-
-        if (user) {
-            const { data, error } = await supabase
-                .from("user_profiles")
-                .insert([
-                    // @ts-ignore
-                    { user_id: user.id, phone: phone as string },
-                ]);
-
-            if (error) {
-                return router.push("/register");
-            }
-
-            return router.push("/login");
-        }
+        return router.push("/login");
     };
 
     return (

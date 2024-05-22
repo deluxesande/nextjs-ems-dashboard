@@ -33,16 +33,19 @@ export default function LoginForm() {
         const email = formData.get("email");
         const password = formData.get("password");
 
-        const { error } = await supabase.auth.signInWithPassword({
-            email: email as string,
-            password: password as string,
+        // Make a call to your backend
+        const response = await fetch("/api/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
         });
 
-        if (error) {
-            return router.push("/login");
+        if (response.status === 200) {
+            // Redirect to the home page
+            return router.push("/");
         }
-
-        return router.push("/");
     };
 
     const signWithGoogle = async (event: React.MouseEvent) => {
@@ -58,20 +61,6 @@ export default function LoginForm() {
 
         if (error) {
             console.error(error.message);
-            return;
-        }
-
-        // Make a call to your backend
-        const response = await fetch("/api/auth/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ user, session }),
-        });
-
-        if (!response.ok) {
-            console.error("Error calling backend:", response.statusText);
             return;
         }
     };
