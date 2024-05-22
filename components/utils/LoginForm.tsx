@@ -45,6 +45,37 @@ export default function LoginForm() {
         return router.push("/");
     };
 
+    const signWithGoogle = async (event: React.MouseEvent) => {
+        event.preventDefault();
+
+        const {
+            data: user,
+            data: session,
+            error,
+        } = await supabase.auth.signInWithOAuth({
+            provider: "google",
+        });
+
+        if (error) {
+            console.error(error.message);
+            return;
+        }
+
+        // Make a call to your backend
+        const response = await fetch("/api/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ user, session }),
+        });
+
+        if (!response.ok) {
+            console.error("Error calling backend:", response.statusText);
+            return;
+        }
+    };
+
     return (
         <Card className="mx-auto min-w-[400px]">
             <CardHeader className="space-y-1">
@@ -117,15 +148,15 @@ export default function LoginForm() {
                         />
                         <p className="text-base">Keep me Logged in</p>
                     </div>
-                    {/* <Button
-                        className="w-full space-y-4"
-                        type="submit"
-                        onClick={() => router.push("/")}
-                    >
-                        Login
-                    </Button> */}
                     <Button className="w-full space-y-4" type="submit">
                         Login
+                    </Button>
+                    <Button
+                        className="w-full space-y-4"
+                        type="button"
+                        onClick={signWithGoogle}
+                    >
+                        Login In With Google
                     </Button>
                     <div className="flex justify-start">
                         <p>
