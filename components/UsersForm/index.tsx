@@ -11,10 +11,7 @@ const UsersForm: React.FC<{
     };
 
     return (
-        <div
-            className="bg-slate-50 p-5 mt-14 rounded-xl"
-            style={{ width: "calc(100vw - 440px)" }}
-        >
+        <div className="w-full bg-slate-50 p-5 mt-14 rounded-xl">
             <h1 className="text-primary font-semibold text-xl my-1">
                 Add User
             </h1>
@@ -38,7 +35,7 @@ const UsersForm: React.FC<{
                     className="rounded-md w-full mt-2"
                 />
             </div>
-            <div className="flex w-full gap-8">
+            <div className="flex flex-col lg:flex-row w-full gap-8">
                 <div className="mt-4 flex-1">
                     <label htmlFor="address" className="text-md">
                         Address
