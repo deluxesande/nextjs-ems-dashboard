@@ -80,7 +80,7 @@ export default function LoginForm() {
                 <hr></hr>
             </CardHeader>
             <CardContent>
-                <form className="space-y-4" onSubmit={signIn}>
+                <form className="space-y-4 pb-4 lg:pb-0" onSubmit={signIn}>
                     <div className="space-y-4">
                         <Select>
                             <SelectTrigger className="w-full">

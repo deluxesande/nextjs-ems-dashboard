@@ -76,7 +76,7 @@ const SideMenuLayout: React.FC<{
                             />
                             <Input
                                 id="search"
-                                className="rounded-full pl-10 w-full lg:w-72"
+                                className="rounded-full pl-10 w-full lg:w-72 appearance-none border-none outline-none bg-transparent"
                                 placeholder="Search"
                                 type="text"
                             />

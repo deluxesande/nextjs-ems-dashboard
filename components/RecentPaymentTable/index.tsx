@@ -70,62 +70,65 @@ export function RecentPaymentTable() {
                         size={20}
                     />
                 </div>
-                <Table className="bg-slate-50 shadow rounded-md mt-5 p-6">
-                    {/* <TableHeader className="pr-6">
-                        <TableRow className="border-none">
-                            <TableHead className="pl-6">Users</TableHead>
-                            <TableHead className="pl-6">Amount</TableHead>
-                            <TableHead className="pl-6">Status</TableHead>
-                            <TableHead className="pl-6">Time</TableHead>
-                        </TableRow>
-                    </TableHeader> */}
-                    <TableBody>
-                        {payments.map((payment, index) => (
-                            <TableRow key={index} className="border-none">
-                                <TableCell className="font-bold py-6 pl-6 w-1/6">
-                                    {payment.Name}
-                                </TableCell>
-                                <TableCell className="font-bold py-6 pl-6 w-1/6">
-                                    Ksh. {payment.Amount}
-                                </TableCell>
-                                <TableCell
-                                    className={`font-semibold py-6 pl-6 w-1/6 ${
-                                        payment.Status === "Paid"
-                                            ? "text-green-500"
-                                            : payment.Status === "Pending"
-                                            ? "text-yellow-500"
-                                            : "text-red-500"
-                                    }`}
-                                >
-                                    <span
-                                        className={`inline-block px-2 py-1 rounded items-center ${
+                <div className="overflow-x-auto">
+                    <Table className="bg-slate-50 shadow rounded-md mt-5 p-6">
+                        <TableHeader className="pr-6">
+                            <TableRow className="border-none">
+                                <TableHead className="pl-6">Users</TableHead>
+                                <TableHead className="pl-6">Amount</TableHead>
+                                <TableHead className="pl-6">Status</TableHead>
+                                <TableHead className="pl-6">Time</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {payments.map((payment, index) => (
+                                <TableRow key={index} className="border-none">
+                                    <TableCell className="font-bold py-6 pl-6 w-1/6">
+                                        {payment.Name}
+                                    </TableCell>
+                                    <TableCell className="font-bold py-6 pl-6 w-1/6">
+                                        Ksh. {payment.Amount}
+                                    </TableCell>
+                                    <TableCell
+                                        className={`font-semibold py-6 pl-6 w-1/6 ${
                                             payment.Status === "Paid"
-                                                ? "bg-green-200 text-green-700"
+                                                ? "text-green-500"
                                                 : payment.Status === "Pending"
-                                                ? "bg-yellow-200 text-yellow-700"
-                                                : "bg-red-200 text-red-700"
+                                                ? "text-yellow-500"
+                                                : "text-red-500"
                                         }`}
                                     >
                                         <span
-                                            className={`inline-block h-2 w-2 mr-2 rounded-full ${
+                                            className={`inline-block px-2 py-1 rounded items-center ${
                                                 payment.Status === "Paid"
-                                                    ? "bg-green-500"
+                                                    ? "bg-green-200 text-green-700"
                                                     : payment.Status ===
                                                       "Pending"
-                                                    ? "bg-yellow-500"
-                                                    : "bg-red-500"
+                                                    ? "bg-yellow-200 text-yellow-700"
+                                                    : "bg-red-200 text-red-700"
                                             }`}
-                                        ></span>
-                                        {payment.Status}
-                                    </span>
-                                </TableCell>
-                                <TableCell className="font-bold py-6 pl-6 w-1/6">
-                                    {calculateTimeElapsed(payment.Date)}
-                                </TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
+                                        >
+                                            <span
+                                                className={`inline-block h-2 w-2 mr-2 rounded-full ${
+                                                    payment.Status === "Paid"
+                                                        ? "bg-green-500"
+                                                        : payment.Status ===
+                                                          "Pending"
+                                                        ? "bg-yellow-500"
+                                                        : "bg-red-500"
+                                                }`}
+                                            ></span>
+                                            {payment.Status}
+                                        </span>
+                                    </TableCell>
+                                    <TableCell className="font-bold py-6 pl-6 w-1/6">
+                                        {calculateTimeElapsed(payment.Date)}
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </div>
             </div>
         </>
     );

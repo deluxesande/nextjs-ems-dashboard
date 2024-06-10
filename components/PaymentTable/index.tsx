@@ -49,34 +49,36 @@ export function PaymentTable() {
                         size={20}
                     />
                 </div>
-                <Table className="bg-slate-50 shadow rounded-md mt-5 p-6">
-                    <TableHeader className="pr-6">
-                        <TableRow>
-                            <TableHead className="pl-6">Users</TableHead>
-                            <TableHead className="pl-6">Address</TableHead>
-                            <TableHead className="pl-6">Date</TableHead>
-                            <TableHead className="pl-6">Amount</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {users.map((user, index) => (
-                            <TableRow key={index} className="border-none">
-                                <TableCell className="font-bold py-6 w-1/6">
-                                    {user.Name}
-                                </TableCell>
-                                <TableCell className="font-bold py-6 w-1/6">
-                                    {user.Address}
-                                </TableCell>
-                                <TableCell className="font-bold py-6 w-1/6">
-                                    {user.Date}
-                                </TableCell>
-                                <TableCell className="font-bold py-6 w-1/6">
-                                    Ksh. {user.Amount}
-                                </TableCell>
+                <div className="overflow-x-auto">
+                    <Table className="bg-slate-50 shadow rounded-md mt-5 p-6">
+                        <TableHeader className="pr-6">
+                            <TableRow>
+                                <TableHead className="pl-6">Users</TableHead>
+                                <TableHead className="pl-6">Address</TableHead>
+                                <TableHead className="pl-6">Date</TableHead>
+                                <TableHead className="pl-6">Amount</TableHead>
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
+                        </TableHeader>
+                        <TableBody>
+                            {users.map((user, index) => (
+                                <TableRow key={index} className="border-none">
+                                    <TableCell className="font-bold py-6 w-1/6">
+                                        {user.Name}
+                                    </TableCell>
+                                    <TableCell className="font-bold py-6 w-1/6">
+                                        {user.Address}
+                                    </TableCell>
+                                    <TableCell className="font-bold py-6 w-1/6">
+                                        {user.Date}
+                                    </TableCell>
+                                    <TableCell className="font-bold py-6 w-1/6">
+                                        Ksh. {user.Amount}
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </div>
             </div>
         </>
     );

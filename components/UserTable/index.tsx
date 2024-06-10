@@ -42,49 +42,51 @@ const users = [
 
 export function UserTable() {
     return (
-        <Table className="bg-slate-50 shadow rounded-md mt-5">
-            <TableHeader className="pr-6">
-                <TableRow>
-                    <TableHead className="w-[100px] pl-6">UID</TableHead>
-                    <TableHead className="pl-6">Name</TableHead>
-                    <TableHead className="pl-6">Address</TableHead>
-                    <TableHead className="pl-6">SCNO</TableHead>
-                    <TableHead className="pl-6">Amount</TableHead>
-                    <TableHead className="pl-6">Action</TableHead>
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {users.map((user, index) => (
-                    <TableRow key={index} className="border-none">
-                        <TableCell className="font-bold py-6 pl-6">
-                            {user.UID}
-                        </TableCell>
-                        <TableCell className="font-bold py-6 pl-6 w-96">
-                            {user.Name}
-                        </TableCell>
-                        <TableCell className="font-bold py-6 pl-6 w-96">
-                            {user.Address}
-                        </TableCell>
-                        <TableCell className="font-bold py-6 pl-6">
-                            {user.SCNO}
-                        </TableCell>
-                        <TableCell className="font-bold py-6 pl-6">
-                            Ksh. {user.Amount}
-                        </TableCell>
-                        <TableCell className="font-bold py-6 pl-6 flex gap-2">
-                            <FilePenLine
-                                className="cursor-pointer text-primary hover:scale-110 transform transition-all duration-200"
-                                size={20}
-                            />
-                            <div className="border-r border-gray-400 h-5"></div>
-                            <Trash2
-                                className="cursor-pointer text-red-500 hover:scale-110 transform transition-all duration-200"
-                                size={20}
-                            />
-                        </TableCell>
+        <div className="overflow-x-auto">
+            <Table className="bg-slate-50 shadow rounded-md mt-5">
+                <TableHeader className="pr-6">
+                    <TableRow>
+                        <TableHead className="w-[100px] pl-6">UID</TableHead>
+                        <TableHead className="pl-6">Name</TableHead>
+                        <TableHead className="pl-6">Address</TableHead>
+                        <TableHead className="pl-6">SCNO</TableHead>
+                        <TableHead className="pl-6">Amount</TableHead>
+                        <TableHead className="pl-6">Action</TableHead>
                     </TableRow>
-                ))}
-            </TableBody>
-        </Table>
+                </TableHeader>
+                <TableBody>
+                    {users.map((user, index) => (
+                        <TableRow key={index} className="border-none">
+                            <TableCell className="font-bold py-6 pl-6">
+                                {user.UID}
+                            </TableCell>
+                            <TableCell className="font-bold py-6 pl-6 w-96">
+                                {user.Name}
+                            </TableCell>
+                            <TableCell className="font-bold py-6 pl-6 w-96">
+                                {user.Address}
+                            </TableCell>
+                            <TableCell className="font-bold py-6 pl-6">
+                                {user.SCNO}
+                            </TableCell>
+                            <TableCell className="font-bold py-6 pl-6">
+                                Ksh. {user.Amount}
+                            </TableCell>
+                            <TableCell className="font-bold py-6 pl-6 flex gap-2">
+                                <FilePenLine
+                                    className="cursor-pointer text-primary hover:scale-110 transform transition-all duration-200"
+                                    size={20}
+                                />
+                                <div className="border-r border-gray-400 h-5"></div>
+                                <Trash2
+                                    className="cursor-pointer text-red-500 hover:scale-110 transform transition-all duration-200"
+                                    size={20}
+                                />
+                            </TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </div>
     );
 }

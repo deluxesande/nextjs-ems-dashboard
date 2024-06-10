@@ -28,7 +28,7 @@ const SideMenuItem: React.FC<{
             <span
                 className={`flex justify-between items-center
                         overflow-hidden transition-all ${
-                            expanded ? "w-52 ml-3" : "w-0"
+                            expanded ? "lg:w-52 ml-3" : "w-0"
                         } `}
             >
                 {text}

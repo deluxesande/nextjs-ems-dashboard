@@ -11,7 +11,7 @@ export default function LoginPage() {
                 <div className="flex-1 h-screen flex flex-col justify-center items-center">
                     {/* Form */}
                     <LoginForm />
-                    <div className="footer fixed bottom-5">
+                    <div className="footer fixed bottom-5 hidden lg:block">
                         <p className="text-xs">
                             &copy; Deluxe Agency. All rights reserved. Made by
                             Deluxe!
@@ -19,7 +19,7 @@ export default function LoginPage() {
                     </div>
                 </div>
                 <div
-                    className="bg-primary flex-1 h-screen flex justify-center items-center"
+                    className="bg-primary flex-1 h-screen justify-center items-center hidden lg:flex"
                     style={{ borderBottomLeftRadius: "150px" }}
                 >
                     {/* Vector image */}
