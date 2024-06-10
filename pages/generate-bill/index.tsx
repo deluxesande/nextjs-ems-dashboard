@@ -20,7 +20,7 @@ const GenerateBill = () => {
                                 Bill
                             </h1>
                             <button
-                                className="bg-primary text-slate-200 px-14 py-2 rounded-md"
+                                className="bg-primary text-sm lg:text-base text-slate-200 px-4 lg:px-14 py-2 rounded-md"
                                 onClick={() => setAddBill(true)}
                             >
                                 Add Bill
