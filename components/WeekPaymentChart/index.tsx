@@ -73,7 +73,7 @@ export default function WeekPaymentChart() {
     }, []);
 
     return (
-        <div className="p-6 bg-slate-50 shadow rounded-md flex-1">
+        <div className="p-6 bg-slate-50 shadow rounded-md w-full">
             <div className="flex justify-between items-center">
                 <h1 className="text-primary font-semibold text-xl my-1">
                     Week Payments
@@ -83,7 +83,9 @@ export default function WeekPaymentChart() {
                     size={20}
                 />
             </div>
-            <canvas className="mt-6" id="myChart" ref={chartRef} />
+            <div className="mt-6">
+                <canvas id="myChart" ref={chartRef} />
+            </div>
         </div>
     );
 }

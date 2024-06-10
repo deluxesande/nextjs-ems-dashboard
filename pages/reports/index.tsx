@@ -13,7 +13,7 @@ const Reports = () => {
                     <title>EBS | Reports</title>
                 </Head>
                 <PaymentTable />
-                <div className="flex justify-between items-start gap-4 mt-10">
+                <div className="flex flex-1 flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center lg:items-start gap-4 mt-10">
                     <WeekPaymentChart />
                     <PendingPayment />
                 </div>
