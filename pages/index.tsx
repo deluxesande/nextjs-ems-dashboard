@@ -30,14 +30,14 @@ export default function Home() {
                 <Head>
                     <title>EBS | Dashboard</title>
                 </Head>
-                <div className="flex gap-5">
+                <div className="flex flex-wrap lg:flex-nowrap gap-5">
                     {/* Icon stats */}
                     {stats.map((stat, index) => {
                         const Icon = stat.icon;
                         return (
                             <div
                                 key={index}
-                                className="bg-slate-50 w-72 p-5 rounded-xl flex gap-4"
+                                className="bg-slate-50 w-full lg:w-72 p-5 rounded-xl flex gap-4"
                             >
                                 <div className="w-14 h-14 rounded-full bg-slate-200 flex items-center justify-center">
                                     <Icon size={25} color="#6366F1" />
@@ -54,7 +54,7 @@ export default function Home() {
                         );
                     })}
                 </div>
-                <div className="flex gap-6">
+                <div className="flex flex-wrap lg:flex-nowrap gap-6">
                     <MonthlyPayment />
                     <PaymentAnalysis />
                 </div>

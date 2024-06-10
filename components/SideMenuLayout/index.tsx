@@ -59,9 +59,9 @@ const SideMenuLayout: React.FC<{
                     alert={page === "Profile"}
                 />
             </SideMenu>
-            <div className="flex-grow p-6 bg-slate-200">
-                <div className="flex justify-between">
-                    <div>
+            <div className="flex-1 flex-grow p-6 bg-slate-200 overflow-x-hidden">
+                <div className="flex flex-wrap lg:flex-nowrap space-y-4 lg:justify-between">
+                    <div className="w-full">
                         <p className="text-sm font-light">Pages / {page}</p>
                         <h1 className="text-primary font-semibold text-3xl my-1">
                             {page}
@@ -76,7 +76,7 @@ const SideMenuLayout: React.FC<{
                             />
                             <Input
                                 id="search"
-                                className="rounded-full pl-10 w-72"
+                                className="rounded-full pl-10 w-full lg:w-72"
                                 placeholder="Search"
                                 type="text"
                             />

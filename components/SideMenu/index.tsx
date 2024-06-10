@@ -1,26 +1,43 @@
 "use-client";
 import { useRouter } from "next/router";
-import { createContext, useState } from "react";
-
-export const SideMenuContext = createContext<any>(null);
+import { createContext, useContext } from "react";
+import { Award, LogOut } from "lucide-react";
+import { SideMenuContext } from "@/context/SideMenuProvider";
 
 const SideMenu = ({ children }: any) => {
-    const [expanded, setExpanded] = useState<boolean>(true);
+    const { expanded, setExpanded } = useContext(SideMenuContext);
+
     const router = useRouter();
 
     return (
-        <aside className="h-screen py-4 w-96 sticky top-0">
+        <aside
+            className={`h-screen py-4 ${
+                expanded ? "lg:w-60" : "w-20"
+            } sticky top-0`}
+        >
             <nav className="h-full flex flex-col bg-white shadow-sm">
-                <div className="p-4 pb-2 flex justify-between items-center">
-                    <h1
-                        // Change mb-4 to match the bread crumbs
-                        className="text-2xl font-bold text-secondary-500 mb-14"
-                        style={{
-                            textTransform: "uppercase",
-                        }}
-                    >
-                        Company
-                    </h1>
+                <div
+                    className="p-4 pb-2 flex justify-center items-center cursor-pointer"
+                    onClick={() => setExpanded(!expanded)}
+                >
+                    {!expanded ? (
+                        // Display this when the view is not expanded
+                        <Award
+                            size={24}
+                            className="mb-14"
+                            color="currentColor"
+                        />
+                    ) : (
+                        // Display this when the view is expanded
+                        <h1
+                            className="text-2xl font-bold text-secondary-500 mb-14"
+                            style={{
+                                textTransform: "uppercase",
+                            }}
+                        >
+                            Company
+                        </h1>
+                    )}
                 </div>
 
                 <SideMenuContext.Provider value={{ expanded }}>
@@ -29,10 +46,20 @@ const SideMenu = ({ children }: any) => {
 
                 <div className="flex justify-center items-center p-3 text-center w-full">
                     <button
-                        className="bg-primary text-slate-200 px-14 py-2 rounded-md"
+                        className={`${
+                            expanded
+                                ? "bg-primary text-slate-200 px-14 py-2 rounded-md flex gap-4 items-center"
+                                : ""
+                        }`}
                         onClick={() => router.push("/login")}
                     >
-                        Log Out
+                        {expanded ? (
+                            <>
+                                Log Out <LogOut color="white" size={20} />
+                            </>
+                        ) : (
+                            <LogOut className="text-primary" size={20} />
+                        )}
                     </button>
                 </div>
             </nav>

@@ -5,7 +5,7 @@ import MonthLineChart from "@/components/MonthLineChart";
 
 export default function MonthlyPayment() {
     return (
-        <div className="w-3/4 p-6 bg-slate-50 shadow rounded-md flex-1">
+        <div className="w-full lg:w-3/4 p-6 bg-slate-50 shadow rounded-md flex-1">
             <div className="flex justify-between items-center">
                 <h1 className="text-primary font-semibold text-xl my-1">
                     Monthly Payments
@@ -15,8 +15,8 @@ export default function MonthlyPayment() {
                     size={20}
                 />
             </div>
-            <div className="flex xl:flex-row sm:flex-col md:flex-col lg:flex-col justify-between items-center gap-4 mt-6">
-                <div className="xl:w-1/4 sm:w-full md:w-full lg:w-full flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-between items-center gap-4 mt-6">
+                <div className="xl:w-1/4 w-full flex flex-col justify-center items-center">
                     <div>
                         <h1 className="text-black font-semibold text-2xl my-1">
                             Ksh 200, 000
